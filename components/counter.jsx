@@ -35,23 +35,25 @@ function Clock() {
     result.sort((a, b) => b - a)
     result.join(',')
     setFibonacci(result);
+    console.log(result)
   };
 
   return (
-    <section className='flex flex-col items-center justify-center bg-gray-900 w-full h-auto min-h-screen overflow-hidden'>
+    <div className='flex flex-col items-center justify-center bg-gray-900 w-full h-auto min-h-screen overflow-hidden pt-4'>
       <div className='flex flex-col items-center justify-center mb-4'>
-        <p className='text-white font-bold'>Current time:{time}</p>
+        <p className='text-white font-bold'>Current time:</p>
+        <span className='font-bold text-6xl md:text-8xl text-white'> {time}</span>
       </div>
       <button onClick={() => handleClick()} className="px-3 py-3 bg-blue-400 rounded-xl font-bold mb-4">Crear serie Fibonacci</button>
       <div className='w-full h-auto flex flex-col justify-center items-center'>
         <ul className='flex flex-col items-center justify-center'>
           {fibonacci.map((fib, index) => (
-            <li className='text-white' key={index}>{fib}</li>
+            <li className='text-white' key={index}>:{fib}</li>
           ))}
         </ul>
 
       </div>
-    </section>
+    </div>
   );
 }
 
